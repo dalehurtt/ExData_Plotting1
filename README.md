@@ -1,3 +1,27 @@
+## From the student
+
+This submission includes the necessary R code and PNG graphics files. However, I include a note about running the code.
+As the data file (referenced below) is rather substantial (more than 100 MB in size), I use additional code to ensure
+that the data is loaded and processed only once. Each R plot code (plot1.r, plot2.R, plot3.R, and plot4.R) reference
+the code getdata.R. This code loads the data, transforms it, and assigns it to the variable 'target'. Thus each plot code
+assumes that the values being plotted are in the variable 'target'.
+
+To ensure that each plot R code has access to the data, the getdata.R code is sourced at the beginning of each file. To
+ensure that the data is loaded and processed only once, getdata.R looks at the existence of the 'target' variable first.
+If it has a value it does not attempt to load and process the file again. This is a simple way of caching data that may
+be used across multiple plot code files.
+
+To replicate this assignment you must have the R code files (including getdata.R) and the household_power_consumption.txt
+dataset in the same directory, and the working directory set to it.
+
+setwd ([directory with code and data])
+source ('./plot1.R')
+source ('./plot2.R')
+source ('./plot3.R')
+source ('./plot4.R')
+
+Note that getdata.R is not explicitly sourced; it is sourced in each of the plot R files.
+
 ## Introduction
 
 This assignment uses data from
